@@ -1,11 +1,24 @@
+var stackTrace = require('stack-trace'),
+    path = require('path');
+
 /**
  * @see http://nodejs.org/docs/v0.11.14/api/all.html#all_require
  * @see http://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate/11477602
  */
 module.exports = function requireNew (module) {
-    var modulePath = require.resolve(module),
+    var dirName,
+        modulePath,
         cachedModule,
         newModule;
+
+    // @see http://nodejs.org/api/modules.html
+    if (module.indexOf('../') === 0 || module.indexOf('./') === 0) {
+        dirName = path.dirname(stackTrace.get()[1].getFileName());
+
+        module = dirName + '/' + module;
+    }
+
+    modulePath = require.resolve(module);
 
     cachedModule = require.cache[modulePath];
 
@@ -21,3 +34,4 @@ module.exports = function requireNew (module) {
 
     return newModule;
 };
+

@@ -59,11 +59,17 @@ require('./rand.js'); // 0.48205413995310664
 
 You can export a function and call that function. This will make the module execute code multiple times.
 
-```rand.js
+```js
 module.exports = function () {
     return Math.random();
 };
 ```
+
+```js
+require('rand.js')(); // 0.561616780469194
+require('rand.js')(); // 0.6468832329846919
+```
+
 See discussion on [Stack Overflow](http://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate/11477602) to consider the pros and cons.
 
 ## Download

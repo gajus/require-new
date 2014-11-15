@@ -9,18 +9,16 @@
 
 `require-new` requires a new module object.
 
-Using `require-new` will not affect the state or behavior of `require` method.
+`require-new` does not affect the state or behavior of `require` method.
 
 ## Usage
 
-Load `require-new` module and use it to load module just as you would, if you were using `require`.
+Load `require-new` module and use it to load a module just as you would with `require`:
 
 ```js
 var requireNew = require('require-new'),
     myModule = requireNew('my-module');
 ```
-
-`require-new` does not affect the state or behavior of `require` method.
 
 ### Example
 
@@ -30,16 +28,16 @@ If you have a module `rand.js`:
 module.exports = Math.random();
 ```
 
-Then requiring this module several times using will result in the same response:
+Then requiring this module several times will result in the same response:
 
 ```js
 require('./rand.js'); // 0.697190385311842
 require('./rand.js'); // 0.697190385311842
 ```
 
-Modules are cached in [`require.cache`](http://nodejs.org/api/globals.html#globals_require_cache) object when they are required. 
+Modules are cached in a [`require.cache`](http://nodejs.org/api/globals.html#globals_require_cache) object when they are required. 
 
-`require-new` deletes the key value from this object associated with the module you are requesting, making the next require to reload the module.
+`require-new` deletes the key value from the `require.cache` object associated with the module you are requesting, making the module reload:
 
 ```js
 requireNew('./rand.js'); // 0.2123227424453944

@@ -11,6 +11,8 @@
 
 `require-new` does not affect the state or behavior of `require` method.
 
+`require-new` has been designed to be used for module testing.
+
 ## Usage
 
 Load `require-new` module and use it to load a module just as you would with `require`:
@@ -53,7 +55,18 @@ requireNew('./rand.js'); // 0.2615479789674282
 require('./rand.js'); // 0.48205413995310664
 ```
 
-## Node
+## Alternative Design
+
+When you have full control over the module, you can export a function and call that function. This will make the module execute code multiple times.
+
+```rand.js
+module.exports = function () {
+    return Math.random();
+};
+```
+See discussion on [Stack Overflow](http://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate/11477602) to consider the pros and cons.
+
+## Download
 
 Download using NPM:
 

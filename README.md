@@ -57,7 +57,7 @@ require('./rand.js'); // 0.48205413995310664
 
 ## Alternative Design
 
-When you have full control over the module, you can export a function and call that function. This will make the module execute code multiple times.
+You can export a function and call that function. This will make the module execute code multiple times.
 
 ```rand.js
 module.exports = function () {

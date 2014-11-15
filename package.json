@@ -8,7 +8,7 @@
     "reload",
     "test"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/require-new.js",
   "author": "Gajus Kuizinas <gk@anuary.com>",
   "repository": {

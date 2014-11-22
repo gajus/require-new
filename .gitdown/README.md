@@ -1,11 +1,7 @@
-<!--
-This file has been generated using GitDown (https://github.com/gajus/gitdown).
-Direct edits to this will be be overwritten. Look for GitDown markup file under ./.gitdown/ path.
--->
-<h2 id="-require-new-">`require-new`</h2>
+## `require-new`
 
-[![Travis build status](http://img.shields.io/travis/gajus/require-new/master.svg?style=flat)](https://travis-ci.org/gajus/require-new)
-[![NPM version](http://img.shields.io/npm/v/require-new.svg?style=flat)](https://www.npmjs.org/package/require-new)
+{"gitdown": "badge", "name": "travis"}
+{"gitdown": "badge", "name": "npm-version"}
 
 > Modules are cached after the first time they are loaded. This means (among other things) that every call to require('foo') will get exactly the same object returned, if it would resolve to the same file.
 
@@ -17,7 +13,7 @@ Direct edits to this will be be overwritten. Look for GitDown markup file under 
 
 `require-new` has been designed to be used for module testing.
 
-<h2 id="usage">Usage</h2>
+## Usage
 
 Load `require-new` module and use it to load a module just as you would with `require`:
 
@@ -26,7 +22,7 @@ var requireNew = require('require-new'),
     myModule = requireNew('my-module');
 ```
 
-<h3 id="usage-example">Example</h3>
+### Example
 
 If you have a module `rand.js`:
 
@@ -59,7 +55,7 @@ requireNew('./rand.js'); // 0.2615479789674282
 require('./rand.js'); // 0.48205413995310664
 ```
 
-<h2 id="alternative-design">Alternative Design</h2>
+## Alternative Design
 
 You can export a function and call that function. This will make the module execute code multiple times.
 
@@ -76,7 +72,7 @@ require('rand.js')(); // 0.6468832329846919
 
 See discussion on [Stack Overflow](http://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate/11477602) to consider the pros and cons.
 
-<h2 id="download">Download</h2>
+## Download
 
 Download using NPM:
 

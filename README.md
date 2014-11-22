@@ -2,7 +2,7 @@
 This file has been generated using GitDown (https://github.com/gajus/gitdown).
 Direct edits to this will be be overwritten. Look for GitDown markup file under ./.gitdown/ path.
 -->
-<h2 id="-require-new-">`require-new`</h2>
+<h2 id="require-new">require-new</h2>
 
 [![Travis build status](http://img.shields.io/travis/gajus/require-new/master.svg?style=flat)](https://travis-ci.org/gajus/require-new)
 [![NPM version](http://img.shields.io/npm/v/require-new.svg?style=flat)](https://www.npmjs.org/package/require-new)

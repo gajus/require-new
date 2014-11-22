@@ -1,4 +1,4 @@
-## `require-new`
+## require-new
 
 {"gitdown": "badge", "name": "travis"}
 {"gitdown": "badge", "name": "npm-version"}

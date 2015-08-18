@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    requireNew = require('../src/require-new.js'),
+    requireNew = require('../src'),
     fixture = __dirname + '/fixtures/rand.js';
 
 describe('require', function () {
@@ -38,5 +38,31 @@ describe('requireNew', function () {
 
         expect(a).to.not.equal(b);
         expect(a).to.equal(c);
+    });
+});
+
+describe('when executed using STDIN', function () {
+    it('uses the current working directory to resolve dependency paths', function (cb) {
+        var exec = require('child_process').exec,
+            command = 'echo "require(\'./src\')(\'./tests/fixtures/hello-world\')" | node';
+
+        exec(command, function (err, stdout) {
+            expect(stdout.trim()).to.equal('Hello, World!');
+
+            cb();
+        });
+    });
+});
+
+describe('when executed using eval', function () {
+    it('uses the current working directory to resolve dependency paths', function (cb) {
+        var exec = require('child_process').exec,
+            command = 'node -e "require(\'./src\')(\'./tests/fixtures/hello-world\')"';
+
+        exec(command, function (err, stdout) {
+            expect(stdout.trim()).to.equal('Hello, World!');
+
+            cb();
+        });
     });
 });

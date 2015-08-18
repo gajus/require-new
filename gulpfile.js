@@ -1,13 +1,14 @@
 var gulp = require('gulp'),
     mocha = require('gulp-mocha'),
-    jshint = require('gulp-jshint'),
+    eslint = require('gulp-eslint'),
     GitDown = require('gitdown');
 
 gulp.task('lint', function () {
     return gulp
-        .src('./src/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'));
+        .src(['./src/**/*.js', './src/tests/**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
 });
 
 gulp.task('test', ['lint'], function () {

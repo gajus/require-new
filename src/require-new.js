@@ -5,7 +5,7 @@ var stackTrace = require('stack-trace'),
  * @see http://nodejs.org/docs/v0.11.14/api/all.html#all_require
  * @see http://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate/11477602
  */
-module.exports = function requireNew (module) {
+module.exports = function (module) {
     var dirName,
         modulePath,
         cachedModule,

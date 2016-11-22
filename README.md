@@ -1,7 +1,11 @@
-<!--
-This file has been generated using GitDown (https://github.com/gajus/gitdown).
-Direct edits to this will be be overwritten. Look for GitDown markup file under ./.gitdown/ path.
--->
+## DEPRECATED
+
+Deprecated in favour of [require-uncached](https://github.com/sindresorhus/require-uncached).
+
+For deprecation reason, see https://github.com/sindresorhus/require-uncached/issues/4.
+
+tl;dr; avoiding duplication of effort in the open-source world.
+
 <h2 id="require-new">require-new</h2>
 
 [![Travis build status](http://img.shields.io/travis/gajus/require-new/master.svg?style=flat)](https://travis-ci.org/gajus/require-new)
@@ -41,7 +45,7 @@ require('./rand.js'); // 0.697190385311842
 require('./rand.js'); // 0.697190385311842
 ```
 
-Modules are cached in a [`require.cache`](http://nodejs.org/api/globals.html#globals_require_cache) object when they are required. 
+Modules are cached in a [`require.cache`](http://nodejs.org/api/globals.html#globals_require_cache) object when they are required.
 
 `require-new` deletes the key value from the `require.cache` object associated with the module you are requesting, making the module reload:
 
